@@ -1,0 +1,1541 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://iosb.fraunhofer.de/security/iec62443#"
+     xml:base="http://iosb.fraunhofer.de/security/iec62443"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://iosb.fraunhofer.de/security/iec62443">
+        <owl:versionIRI rdf:resource="http://iosb.fraunhofer.de/security/iec62443/0.1.0"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology currently represents of knowledge about IEC 62443-1-1 (Edition 1.0 2009-07), IEC 62443-2-1 (Edition 1.0 2010-11) and IEC 62443-3-3 (Edition 1.0 2013-08).</description>
+        <creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Florian Patzer &lt;florian.patzer@iosb.fraunhofer.de&gt;</creator>
+        <license>GNU Lesser General Public License v2.1</license>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#contributors -->
+
+    <owl:AnnotationProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#contributors"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#creator -->
+
+    <owl:AnnotationProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#creator">
+        <rdfs:subPropertyOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#contributors"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#description -->
+
+    <owl:AnnotationProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#description"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#license -->
+
+    <owl:AnnotationProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#license"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#associatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#associatedWith">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cooperative relationship between system entities, usually for the purpose of transferring information between them</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#crossesBorder -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#crossesBorder">
+        <rdfs:domain rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Conduit"/>
+        <rdfs:range rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Border"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Security zone borders can be crossed by conduits. This property implicitly defines the connections of a conduit with the respective security zones.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#enclosedBy -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#enclosedBy"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#hasRequirementEnhancement -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#hasRequirementEnhancement">
+        <rdfs:domain rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <rdfs:range rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept to associate SystemRequirement individuals to SystemRequirementEnhancements individuals</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#hasSubZone -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#hasSubZone">
+        <rdfs:domain rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityZone"/>
+        <rdfs:range rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityZone"/>
+        <rdfs:comment>Enables hierarchical definition of security zones</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#hasSystemRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#hasSystemRequirement">
+        <rdfs:domain rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel"/>
+        <rdfs:range rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associates a security level to a system requirement</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#implementsSecurityLevel -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#implementsSecurityLevel"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#inheritsSecurityPropertiesOf -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#inheritsSecurityPropertiesOf">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Channels inherit the security properties of the conduit used as the communication media (i.e., a channel within a secured conduit will maintain the security level of the secured conduit).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#mandatesUseOf -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#mandatesUseOf">
+        <rdfs:domain rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Policy"/>
+        <rdfs:range rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Procedure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Policies reference procedures and mandate their use.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#mitigates -->
+
+    <owl:ObjectProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#mitigates"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SessionId -->
+
+    <owl:DatatypeProperty rdf:about="http://iosb.fraunhofer.de/security/iec62443#SessionId">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifier used to indicate a specific session entry.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#AccessControl -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#AccessControl">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Countermeasure"/>
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Protection of system resources against unauthorized access; a process by which use of system resources is regulated according to a security policy and is permitted by only authorized entities (users, programs, processes, or other systems) according to that policy. Access control is also formulated as foundational requirement in IEC62443-1-1.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#AchievedSecurityLevel -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#AchievedSecurityLevel">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Achieved security level of a zone or conduit.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#ActiveAttack -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#ActiveAttack">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Attack"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &quot;active attack&quot; attempts to alter system resources or affect their operation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Asset -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Asset">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#HumanAsset"/>
+            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#LogicalAsset"/>
+            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAsset"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical or logical object owned by or under the custodial duties of an organization, having either a perceived or actual value to the organization</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Assurance -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Assurance">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attribute of a system that provides grounds for having confidence that the system operates in such a way that the system security policy is enforced</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Attack -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Attack">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assault on a system that derives from an intelligent threat — i.e., an intelligent act that is a deliberate attempt (especially in the sense of a method or technique) to evade security services and violate the security policy of a system</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Authentication -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Authentication">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Countermeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Security measure designed to establish the validity of a transmission, message, or originator, or a means of verifying an individual&apos;s authorization to receive specific categories of information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Border -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Border">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Edge or boundary of a physical or logical security zone</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#CapabilitySecurityLevel -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#CapabilitySecurityLevel">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Security level capability of countermeasures associated with a zone or
+conduit or inherent security level capability of devices or systems within a zone or conduit.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Channel -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Channel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://iosb.fraunhofer.de/security/iec62443#inheritsSecurityPropertiesOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Conduit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific communication link established within a communication conduit</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Client -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Client">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Device or application receiving or requesting services or information from a server application</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#CommunicationsAccess -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#CommunicationsAccess">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityGoalType"/>
+        <owl:disjointWith rdf:resource="http://iosb.fraunhofer.de/security/iec62443#PhysicalAccessAndProximity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For a group of assets within a security border to provide value, they need to be linked to assets outside the security zone. This access can be in many forms, including physical movement of assets (products) and people (employees and vendors) or electronic communication with entities outside the security zone.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#CommunicationsConduit -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#CommunicationsConduit">
+        <owl:equivalentClass rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Conduit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Conduit -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Conduit">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Logical grouping of communication assets that protects the security of the channels it contains. This is analogous to the way that a physical conduit protects cables from physical damage.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#ControlNetwork -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#ControlNetwork">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time-critical network that is typically connected to equipment that controls physical processes. The control network can be subdivided into zones and there can be multiple separate control networks within one company or site.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Countermeasure -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Countermeasure">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#RiskResponse"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">action, device, procedure, or technique that reduces a threat, a vulnerability, or an attack by eliminating or preventing it, by minimizing the harm it can cause, or by discovering and reporting it so that corrective action can be taken. The term “control” is also used to describe this concept in some contexts. The term countermeasure has been chosen for this document to avoid confusion with the term “control” in the context of process control. Another term used as synonym for countermeasure is the term &quot;security control&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#DataConfidentiality -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#DataConfidentiality">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ensure the confidentiality of data on selected communication channels to protect against eavesdropping.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#DataIntegrity -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#DataIntegrity">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ensure the integrity of data on selected communication channels to protect against unauthorized changes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#DegradedMode -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#DegradedMode">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mode of operation in the presence of faults which have been anticipated in the design of the control system. Degraded modes allow the control system to continue to provide essential functions despite the deficiency of one or several system elements, for example malfunction or outage of control equipment, disruption of communication due to failure or intentional system isolation in response to identified or suspected compromise of subsystems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#DemilitarizedZone -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#DemilitarizedZone"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Device -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Device">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#Asset"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#LogicalAsset"/>
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAsset"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asset incorporating one or more processors with the capability of sending or receiving data/control to or from another asset.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#DigitalSignature -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#DigitalSignature">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Countermeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Result of a cryptographic transformation of data which, when properly implemented, provides the services of origin authentication, data integrity, and signer non-repudiation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Domain -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Domain">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environment or context that is defined by a security policy, security model, or security architecture to include a set of system resources and the set of system entities that have the right to access the resources</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Encryption -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Encryption">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Countermeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cryptographic transformation of plaintext into ciphertext that conceals the data’s original meaning to prevent it from being known or used.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#ExternalNetwork -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#ExternalNetwork">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Opposite of an internal network</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#FieldIoNetwork -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#FieldIoNetwork">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">communications link (wired or wireless) that connects sensors and actuators to the control equipment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Firewall -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Firewall">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityComponent"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#LogicalAsset"/>
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAsset"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inter-network connection device that restricts data communication traffic between two connected networks. A firewall may be either an application installed on a general-purpose computer or a dedicated platform (appliance) that forwards or rejects/drops packets on a network. Typically firewalls are used to define zone borders. Firewalls generally have rules restricting which ports are open.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Gateway -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Gateway">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#Asset"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#LogicalAsset"/>
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAsset"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relay mechanism that attaches to two (or more) computer networks that have similar functions but dissimilar implementations and that enables host computers on one network to communicate with hosts on the other</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Guard -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Guard">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Gateway"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gateway that is interposed between two networks (or computers or other information systems) operating at different security levels (one network is usually more secure than the other) and is trusted to mediate all information transfers between the two networks, either to ensure that no sensitive information from the more secure network is disclosed to the less secure network, or to protect the integrity of data on the more secure network</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Host -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Host">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">computer that is attached to a communication sub-network or inter-network and can use services provided by the network to exchange data with other attached systems</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#HumanAsset -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#HumanAsset">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Asset"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human assets include people and the knowledge and skills that they
+possess associated with their production activities. They can include required certifications, equipment-specific knowledge, or other activities not included in the automated production processes or important skills needed during emergencies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Identifier -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Identifier">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assertion of an identity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IdentityBasedAccessControl -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IdentityBasedAccessControl">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#AccessControl"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Access control based on identifyable entities</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#InsideAttack -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#InsideAttack">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Attack"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &quot;inside attack&quot; is an attack initiated by an entity inside the security perimeter (an &quot;insider&quot;) – i.e., an entity that is authorized to access system resources but uses them in a way not approved by those who granted the authorization.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Interface -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Interface">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">logical entry or exit point that provides access to the module for logical information flows</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#InternalNetwork -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#InternalNetwork">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In the context of industrial automation and control systems, the term “internal network” is typically applied to the network or segment that is the primary focus of protection. For example, a control network could be considered “internal” when connected to an “external” business network.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#InternetProtocol -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#InternetProtocol">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Internet Protocol (IP)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IntrusionDetection -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IntrusionDetection">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Countermeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">security service that monitors and analyzes system events for the purpose of finding, and providing real-time or near real-time warning of, attempts to access system resources in an unauthorized manner</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISO/OSI layer of the ISO/OSI reference model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer1 -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer1">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Layer 1 of the ISO/OSI reference model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer2 -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer2">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Layer 2 of the ISO/OSI reference model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer3 -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer3">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Layer 3 of the ISO/OSI reference model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer4 -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer4">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Layer 4 of the ISO/OSI reference model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer5 -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer5">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Layer 5 of the ISO/OSI reference model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer6 -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer6">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Layer 6 of the ISO/OSI reference model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer7 -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer7">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#IsoOsiLayer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Layer 7 of the ISO/OSI reference model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#LocalAreaNetwork -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#LocalAreaNetwork">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Communications network designed to connect computers and other intelligent devices in a limited geographic area (typically less than 10 km)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#LogicalAsset -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#LogicalAsset">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Asset"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">logical assets are of an informational nature. They can include intellectual
+property, algorithms, proprietary practices, process-specific knowledge, or other
+informational elements that encapsulate an organization’s ability to operate or innovate. Further, these types of assets can include public reputation, buyer confidence, or other measures that, if damaged, directly affect the business. Logical assets may be in the form of personal memory, documents, information contained on physical media, or electronic storage records dealing with the informational asset. Logical assets can also include test results, regulatory compliance data, or any other information considered sensitive or proprietary, or that could either provide or yield a competitive advantage. Loss of logical assets often causes very long lasting and damaging effects to an organization.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#OutsideAttack -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#OutsideAttack">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Attack"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &quot;outside attack&quot; is initiated from outside the perimeter, by an unauthorized or illegitimate user of the system (including an insider attacking from outside the security perimeter). Potential outside attackers range from amateur pranksters to organized criminals, international terrorists, and hostile governments.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#PassiveAttack -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#PassiveAttack">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Attack"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &quot;passive attack&quot; attempts to learn or make use of information from the system but does not affect system resources.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#PhysicalAccessAndProximity -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAccessAndProximity">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityGoalType"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical security zones are used to limit access to a particular area because all the systems in that area require the same level of trust of their human operators, maintainers, and developers. For physical zones, locks on doors or other physical means protect against unauthorized access. The boundary is the wall or cabinet that restricts access. Physical zones should have physical boundaries commensurate with the level of security desired, and aligned with other asset security plans.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#PhysicalAsset -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAsset">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Asset"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical assets include any physical component or group of components
+belonging to an organization. In the industrial environment, these may include control systems, physical network components and transmission media, conveyance systems, walls, rooms, buildings, material, or any other physical objects that are in any way involved with the control, monitoring, or analysis of production processes or in support of the general business. The most significant physical assets are those that make up the equipment that is under the control of the automation system</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#PhysicalZone -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalZone">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityZone"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical zones are defined by grouping assets by physical location. In
+this type of zone it is easy to determine which assets are within each zone.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Policy -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Policy"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Procedure -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Procedure">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Complementing policies are procedures. Security procedures define in detail the sequence of steps necessary to provide a certain security measure. Because of their level of detail, procedures apply to a specific issue.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Protocol -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Protocol">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set of rules (i.e., formats and procedures) to implement and control some type of association (e.g., communication) between systems</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#RemoteAccess -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#RemoteAccess">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">use of systems that are inside the perimeter of the security zone being addressed from a different geographical location with the same rights as when physically present at the location; NOTE The exact definition of “remote” can vary according to the situation. For example, access may come from a
+location that is remote to the specific zone, but still within the boundaries of a company or organization. This might represent a lower risk than access that originates from a location that is remote and outside of a company’s boundaries.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#RemoteClient -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#RemoteClient">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#Asset"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#LogicalAsset"/>
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAsset"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">asset outside the control network that is temporarily or permanently connected to a host inside the control network via a communication link in order to directly or indirectly access parts of the control equipment on the control network</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#ResourceAvailability -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#ResourceAvailability">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ensure the availability of all network resources to protect against denial of service attacks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#RestrictDataFlow -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#RestrictDataFlow">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Restrict the flow of data on communication channels to protect against the publication of information to unauthorized sources.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Risk -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Risk">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expectation of loss expressed as the probability that a particular threat will exploit a particular vulnerability with a particular consequence</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#RiskResponse -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#RiskResponse"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Role -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Role">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set of connected behaviors, privileges and obligations associated with all users (humans, software processes or devices) of an IACS. The privileges to perform certain operations are assigned to specific roles.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#RoleBasedAccessControl -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#RoleBasedAccessControl">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#IdentityBasedAccessControl"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">form of identity-based access control where the system entities that are identified and controlled are functional positions in an organization or process</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Router -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Router">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Gateway"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gateway between two networks at OSI layer 3 that relays and directs data packets through an inter-network. The most common form of router passes Internet Protocol (IP) packets</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SafetyNetwork -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SafetyNetwork">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">network that connects safety-instrumented systems for the communication of safety-related information</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityComponent -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityComponent">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#Asset"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#LogicalAsset"/>
+                            <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAsset"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">assets such as firewalls, authentication modules, or encryption software used to improve the security performance of an industrial automation and control system</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityEvent -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityEvent">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurrence in a system that is relevant to the security of the system</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityFunction -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityFunction">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">function of a zone or conduit to prevent unauthorized electronic intervention that can impact or influence the normal functioning of devices and systems within the zone or conduit</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityGoal -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityGoal">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#CommunicationsAccess"/>
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#PhysicalAccessAndProximity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When defining a security zone, an organization should first assess the security requirements (security goals) and then determine whether a particular asset should be considered within the zone or outside the zone.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityGoalType -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityGoalType"/>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityIncident -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityIncident">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adverse event in a system or network, or the threat of the occurrence of such an event</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityLevel -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">level corresponding to the required effectiveness of countermeasures and inherent security properties of devices and systems for a zone or conduit based on assessment of risk for the zone or conduit</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityPerimeter -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityPerimeter">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">boundary (logical or physical) of the domain in which a security policy or security architecture applies, i.e., the boundary of the space in which security services protect system resources</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityPolicy -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityPolicy">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Policy"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set of rules that specify or regulate how a system or organization provides security services to protect its assets. Policies are defined at different levels in an organization, ranging
+from governance or management policies established at the enterprise level to operation
+policies defining the details of security administration. Policies at the most specific level are the
+organization&apos;s document against which security audits can measure compliance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityRule -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityRule">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">partially specifies or regulates how a system or organization provides security services to protect its assets</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityViolation -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityViolation">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">act or event that disobeys or otherwise breaches security policy through an intrusion or the actions of a well-meaning insider</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SecurityZone -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SecurityZone">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#TrustedZone"/>
+                    <rdf:Description rdf:about="http://iosb.fraunhofer.de/security/iec62443#UntrustedZone"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://iosb.fraunhofer.de/security/iec62443#enclosedBy"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://iosb.fraunhofer.de/security/iec62443#Border"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grouping of logical or physical assets that share common security requirements;
+NOTE 1: All unqualified uses of the term “zone” in this document should be assumed to refer to a security zone.
+NOTE 2: A zone has a clear border with other zones. The security policy of a zone is typically enforced by a combination of mechanisms both at the zone edge and within the zone. Zones can be hierarchical in the sense that they can be comprised of a collection of sub-zones.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Server -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Server">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device or application that provides information or services to client applications and devices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Session -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Session">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semi-permanent, stateful and interactive information interchange between two or more communicating devices. Typically a session has clearly defined start and end processes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SystemRequirement -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Security related requirements which have to be met by the control system, e.g. in order to meet the foundational requirements defined in IEC62443-1-1.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">More detailed and restrictive requirement associated with a system requirement.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#TargetSecurityLevel -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#TargetSecurityLevel">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Target security level for a zone or conduit.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#TimelyResponseToEvent -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#TimelyResponseToEvent">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Respond to security violations by notifying the proper authority, reporting needed forensic evidence of the violation, and automatically taking timely corrective action in mission-critical or safety-critical situations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#TrustedZone -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#TrustedZone">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <owl:disjointWith rdf:resource="http://iosb.fraunhofer.de/security/iec62443#UntrustedZone"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As with zones, conduits may be either trusted or untrusted. Conduits that do not cross zone boundaries are typically trusted by the communicating processes within the zone. Trusted conduits crossing zone boundaries need to use an end-to-end secure process.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#UntrustedZone -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#UntrustedZone">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Untrusted conduits are those that are not at the same level of security as the zone endpoint. In this case the actual communication security becomes the responsibility of the individual channel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#UseControl -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#UseControl">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#FoundationalRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Control use of selected devices, information or both to protect against unauthorized operation of the device or use of information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#User -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#User">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">person, organization entity, or automated process that accesses a system, whether authorized to do so or not</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#VirtualZone -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#VirtualZone">
+        <rdfs:subClassOf rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityZone"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virtual zones are defined by grouping assets, or parts of physical assets, into security zones based on functionality or other characteristics, rather than the actual location of the assets.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#Vulnerability -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#Vulnerability">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flaw or weakness in a system&apos;s design, implementation, or operation and management that could be exploited to violate the system&apos;s integrity or security policy</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#WideAreaNetwork -->
+
+    <owl:Class rdf:about="http://iosb.fraunhofer.de/security/iec62443#WideAreaNetwork">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">communications network designed to connect computers, networks and other devices over a large distance, such as across a country or the world</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SL-C-1-IAC -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SL-C-1-IAC">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#CapabilitySecurityLevel"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capability security level 1 for foundational requirement &quot;Identification and authentication control&quot;: Identify and authenticate all users (humans, software processes and devices) by mechanisms which protect against casual or coincidental access by unauthenticated entities.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SL-C-2-IAC -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SL-C-2-IAC">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#CapabilitySecurityLevel"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capability security level 2 for foundational requirement &quot;Identification and authentication control&quot;: Identify and authenticate all users (humans, software processes and devices) by mechanisms which protect against intentional unauthenticated access by entities using simple means with low resources, generic skills and low motivation.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SL-C-3-IAC -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SL-C-3-IAC">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#CapabilitySecurityLevel"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-1"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capability security level 3 for foundational requirement &quot;Identification and authentication control&quot;: Identify and authenticate all users (humans, software processes and devices) by mechanisms which protect against intentional unauthenticated access by entities using sophisticated means with moderate resources, IACS specific skills and moderate motivation.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SL-C-4-IAC -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SL-C-4-IAC">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#CapabilitySecurityLevel"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-1"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-2"/>
+        <hasSystemRequirement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capability security level 4 for foundational requirement &quot;Identification and authentication control&quot;: Identify and authenticate all users (humans, software processes and devices) by mechanisms which protect against intentional unauthenticated access by entities using sophisticated means with extended resources, IACS specific skills and high motivation.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SL1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SL1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prevent the unauthorized disclosure of information via eavesdropping or casual exposure.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SL2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SL2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prevent the unauthorized disclosure of information to an entity actively searching for it using simple means with low resources, generic skills and low motivation.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SL3 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SL3">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prevent the unauthorized disclosure of information to an entity actively searching for it using sophisticated means with moderate resources, IACS specific skills and moderate motivation.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SL4 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SL4">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SecurityLevel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prevent the unauthorized disclosure of information to an entity actively searching for it using sophisticated means with extended resources, IACS specific skills and high motivation.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-1.1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-1.1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-1"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-2"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requirement 1.1 from IEC62443-3-3: &quot;All human users need to be identified and authenticated for all access to the control system...&quot;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Detailed Requirement for &quot;SR 1.1 – Human user identification and authentication&quot; which addresses &quot;Unique identification and authentication&quot; and specifies the following: The control system shall provide the capability to uniquely identify and authenticate all human users.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Detailed Requirement for &quot;SR 1.1 – Human user identification and authentication&quot; which addresses &quot;Multifactor authentication for untrusted networks&quot; and specifies the following: The control system shall provide the capability to employ multifactor authentication for human user access to the control system via an untrusted network.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-3 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-1.1-RE-3">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Detailed Requirement for &quot;SR 1.1 – Human user identification and authentication&quot; which addresses &quot;Multifactor authentication for all networks&quot; and specifies the following: The control system shall provide the capability to employ multifactor authentication for all human user access to the control system.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.1-RE-1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requirement 3.1 from IEC62443-3-3: &quot;SR 3.1 – Communication integrity&quot;: The control system shall provide the capability to protect the integrity of transmitted information.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.1-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.1-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.1 RE 1 – Cryptographic integrity protection&quot;: The control system shall provide the capability to employ cryptographic mechanisms to recognize changes to information during communication.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.2-RE-1"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.2-RE-2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 3.2 from IEC62443-3-3: &quot;SR 3.2 – Malicious code protection&quot;: The control system shall provide the capability to employ protection mechanisms to prevent, detect, report and mitigate the effects of malicious code or unauthorized software. The control system shall provide the capability to update the protection mechanisms.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.2-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.2-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.2 RE 1 – Malicious code protection on entry and exit points&quot;: The control system shall provide the capability to employ malicious code protection mechanisms at all entry and exit points.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.2-RE-2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.2-RE-2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.2 RE 2 – Central management and reporting for malicious code protection&quot;: The control system shall provide the capability to manage malicious code protection mechanisms.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.3 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.3">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.3-RE-1"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.3-RE-2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 3.3 from IEC62443-3-3: &quot;SR 3.3 – Security functionality verification&quot;: The control system shall provide the capability to support verification of the intended operation of security functions and report when anomalies are discovered during FAT, SAT and scheduled maintenance. These security functions shall include all those necessary to support the security requirements specified in this standard.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.3-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.3-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.3 RE 1 – Automated mechanisms for security functionality verification&quot;: The control system shall provide the capability to employ automated mechanisms to support management of security verification during FAT, SAT and scheduled maintenance.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.3-RE-2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.3-RE-2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.3 RE 2 – Security functionality verification during normal operation&quot;: The control system shall provide the capability to support verification of the intended
+operation of security functions during normal operations.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.4 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.4">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.4-RE-1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 3.4 from IEC62443-3-3: &quot;SR 3.4 – Software and information integrity&quot;: The control system shall provide the capability to detect, record, report and protect against unauthorized changes to software and information at rest.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.4-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.4-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.4 RE 1 – Automated notification about integrity violations&quot;: The control system shall provide the capability to use automated tools that provide notification to a configurable set of recipients upon discovering discrepancies during integrity verification.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.5 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.5">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 3.5 from IEC62443-3-3: &quot;SR 3.5 – Input validation&quot;: The control system shall validate the syntax and content of any input which is used as an industrial process control input or input that directly impacts the action of the control system.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.6 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.6">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 3.6 from IEC62443-3-3: &quot;SR 3.6 – Deterministic output&quot;: The control system shall provide the capability to set outputs to a predetermined state if normal operation cannot be maintained as a result of an attack.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.7 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.7">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 3.7 from IEC62443-3-3: &quot;SR 3.7 – Error handling&quot;: The control system shall identify and handle error conditions in a manner such that effective remediation can occur. This shall be done in a manner which does not provide information that could be exploited by adversaries to attack the IACS unless revealing this information is necessary for the timely troubleshooting of problems</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.8 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.8">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-1"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-2"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 3.8 from IEC62443-3-3: &quot;SR 3.8 – Session integrity&quot;: The control system shall provide the capability to protect the integrity of sessions. The control system shall reject any usage of invalid session IDs.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.8 RE 1 – Invalidation of session IDs after session termination&quot;: The control system shall provide the capability to invalidate session IDs upon user logout or other session termination (including browser sessions).</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.8 RE 2 – Unique session ID generation&quot;: The control system shall provide the capability to generate a unique session ID for each session and treat all unexpected session IDs as invalid.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-3 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.8-RE-3">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.8 RE 3 – Randomness of session IDs&quot;: The control system shall provide the capability to generate unique session IDs with commonly accepted sources of randomness.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.9 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.9">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-3.9-RE-1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 3.9 from IEC62443-3-3: &quot;SR 3.9 – Protection of audit information&quot;: The control system shall protect audit information and audit tools (if present) from unauthorized access, modification and deletion.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-3.9-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-3.9-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 3.9 RE 1 – Audit records on write-once media&quot;: The control system shall provide the capability to produce audit records on hardware-enforced write-once media.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-4.1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-4.1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-4.1-RE-1"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-4.1-RE-2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 4.1 from IEC62443-3-3: &quot;SR 4.1 – Information confidentiality&quot;: The control system shall provide the capability to protect the confidentiality of information for which explicit read authorization is supported, whether at rest or in transit.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-4.1-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-4.1-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 4.1 RE 1 – Protection of confidentiality at rest or in transit via untrusted networks&quot;: The control system shall provide the capability to protect the confidentiality of information at rest and remote access sessions traversing an untrusted network.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-4.1-RE-2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-4.1-RE-2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 4.1 RE 2 – Protection of confidentiality across zone boundaries&quot;: The control system shall provide the capability to protect the confidentiality of information traversing any zone boundary.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-4.2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-4.2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-4.2-RE-1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 4.2 from IEC62443-3-3: &quot;SR 4.2 – Information persistence&quot;: The control system shall provide the capability to purge all information for which explicit read authorization is supported from components to be released from active service and/or decommissioned.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-4.2-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-4.2-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 4.2 RE 1 – Purging of shared memory resources&quot;: The control system shall provide the capability to prevent unauthorized and unintended information transfer via volatile shared memory resources.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-4.3 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-4.3">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 4.3 from IEC62443-3-3: &quot;SR 4.3 – Use of cryptography&quot;: If cryptography is required, the control system shall use cryptographic algorithms, key sizes and mechanisms for key establishment and management according to commonly accepted security industry practices and recommendations.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-1"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-2"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 5.1 from IEC62443-3-3: &quot;SR 5.1 – Network segmentation&quot;: The control system shall provide the capability to logically segment control system networks from non-control system networks and to logically segment critical control system networks from other control system networks</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requierement enhancement &quot;SR 5.1 RE 1 – Physical network segmentation&quot;: The control system shall provide the capability to physically segment control system networks from non-control system networks and to physically segment critical control system networks from non-critical control system networks.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement enhancement &quot;SR 5.1 RE 2 – Independence from non-control system networks&quot;: The control system shall have the capability to provide network services to control system networks, critical or otherwise, without a connection to non-control system networks.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-3 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.1-RE-3">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement enhancement &quot;SR 5.1 RE 3 – Logical and physical isolation of critical networks&quot;: The control system shall provide the capability to logically and physically isolate critical control system networks from non-critical control system networks.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-1"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-2"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 5.2 from IEC62443-3-3: &quot;SR 5.2 – Zone boundary protection&quot;: The control system shall provide the capability to monitor and control communications at zone boundaries to enforce the compartmentalization defined in the risk-based zones and conduits model.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement enhancement &quot;SR 5.2 RE 1 – Deny by default, allow by exception&quot;: The control system shall provide the capability to deny network traffic by default and allow network traffic by exception (also termed deny all, permit by exception).</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-2 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-2">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement enhancement &quot;SR 5.2 RE 2 – Island mode&quot;: The control system shall provide the capability to prevent any communication through the control system boundary (also termed island mode).</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-3 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.2-RE-3">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement enhancement &quot;SR 5.2 RE 3 – Fail close&quot;: The control system shall provide the capability to prevent any communication through the control system boundary when there is an operational failure of the boundary protection mechanisms (also termed fail close). This ‘fail close’ functionality shall be designed such that it does not interfere with the operation of a SIS or other safety-related functions.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.3 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.3">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <hasRequirementEnhancement rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SR-5.3-RE-1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 5.3 from IEC62443-3-3: &quot;SR 5.3 – General purpose person-to-person communication restrictions&quot;: The control system shall provide the capability to prevent general purpose person-to-person messages from being received from users or systems external to the control system.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.3-RE-1 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.3-RE-1">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirementEnhancement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement enhancement &quot;SR 5.3 RE 1 – Prohibit all general purpose person-to-person communications&quot;: The control system shall provide the capability to prevent both transmission and receipt of general purpose person-to-person messages.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://iosb.fraunhofer.de/security/iec62443#SR-5.4 -->
+
+    <owl:NamedIndividual rdf:about="http://iosb.fraunhofer.de/security/iec62443#SR-5.4">
+        <rdf:type rdf:resource="http://iosb.fraunhofer.de/security/iec62443#SystemRequirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System requierement 5.4 from IEC62443-3-3:&quot;SR 5.4 – Application partitioning&quot;: The control system shall provide the capability to support partitioning of data, applications and services based on criticality to facilitate implementing a zoning model.</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
